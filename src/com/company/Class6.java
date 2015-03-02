@@ -2,7 +2,6 @@ package com.company;
 
 
 import java.util.Scanner;
-import org.
 
 /**
  Write a program that which takes an year "N" as input and prints true if N corresponds to a leap year, and false otherwise. Assumes N >= 1582, corresponding to a year in the Gregorian calendar.
@@ -18,6 +17,27 @@ import org.
 
 
 public class Class6 {
+
+
+/*
+    Given a double from user, calc the square root and the quad root and print it.
+    Limit the answers to 5 decimal places.
+
+    For Example:
+    Input:
+            81
+    Output:
+            9.00000
+            3.00000
+
+
+    Input:
+            625
+    Output:
+            25.00000
+            5.00000
+*/
+
 
     public static boolean isNumeric(String str)
     {
@@ -38,8 +58,11 @@ public class Class6 {
         Scanner scanIn = new Scanner(System.in);
         Double doubleTemp = null;
         String stringTemp = null;
+
+        double factor = 1e5; // = 1 * 10^5 = 100000.
+
         do {
-            System.out.println("Enter a temperature in Celsius: ");
+            System.out.println("Input : ");
             stringTemp = scanIn.nextLine();
             if (isNumeric(stringTemp) == true)
             {
@@ -47,15 +70,18 @@ public class Class6 {
             } else System.out.println("Value is not numeric, please reenter");
         } while (isNumeric(stringTemp) == false);
 
-        if (doubleTemp > 0) {
-            int intTemp = (int) Math.round(doubleTemp);
-            int Far = (intTemp * 9/5) + 32;
-            System.out.println(" The temperature in Fahrenheit is: " + Far);
-        } else {
-            double Far = (doubleTemp * 9/5) + 32;
-            System.out.println(" The temperature in Fahrenheit is: " + Far);
-        }
+        double firstRoot = Math.sqrt(doubleTemp);
+        double secondRoot = Math.sqrt(firstRoot);
 
+        System.out.println("Output : ");
+
+        String strDouble1 = String.format("%.5f", firstRoot);
+        String strDouble2 = String.format("%.5f", secondRoot);
+        System.out.println(strDouble1);
+        System.out.println(strDouble2);
+
+
+     ;
 
     }
 }
