@@ -33,13 +33,31 @@ Decimal Value:5
     }
 
 
+    public static double Oct2Dec(String str)
+    {
+        int L = str.length();
+        double result = 0;
+        double j =  L - 1;
+        for (int i = 0; i < L; i++)
+        {
+            String test = str.substring(i,i+1);
+            result = result + Double.parseDouble(str.substring(i,i+1)) * Math.pow(8,j);
+            j--;
+        }
+
+
+    return result;
+    }
+
+
+
+
     public static void run()
     {
         Scanner scanIn = new Scanner(System.in);
         Double double1 = null;
         String string1 = null;
-        Double double2 = null;
-        String string2 = null;
+
 
 
         do {
@@ -51,27 +69,12 @@ Decimal Value:5
             } else System.out.println("Value is not numeric, please reenter");
         } while (isNumeric(string1) == false);
 
-        do {
-            System.out.println("Input 2 : ");
-            string2 = scanIn.nextLine();
-            if (isNumeric(string2) == true)
-            {
-                double2 = Double.parseDouble(string2);
-            } else System.out.println("Value is not numeric, please reenter");
-        } while (isNumeric(string2) == false);
+        double result = Oct2Dec(string1);
+        String resultS = Double.toString(result);
+        System.out.println("Result: ");
+        System.out.println(resultS);
 
-        int double1L = double1.toString().length();
-        Double result = double1 + double2;
 
-        int resultL = result.toString().length();
-
-        if (resultL > double1L) {
-            System.out.println("Input1: ");
-            System.out.println(double1);
-        } else {
-            System.out.println("Result: ");
-            System.out.println(result);
-        }
 
 
 
