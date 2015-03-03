@@ -5,6 +5,6 @@ public class Main {
 
     public static void main(String[] args) {
         // write your code here
-        Class9.run();
+        Class10.run();
     }
 }
