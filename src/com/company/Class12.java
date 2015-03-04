@@ -151,8 +151,8 @@ Input:
         private int num() { return num; }
         private double grav() { return grav; }
 
-        double surfaceWeight(double otherMass, Planets P) {
-        return otherMass * P.grav();}
+        double surfaceWeight(double otherMass) {
+        return otherMass * grav;}
 
         Planets returnName (int num) {
             Planets pl = null;
@@ -198,9 +198,11 @@ Input:
         System.out.println("1. Venus 2. Mars 3. Jupiter  4. Saturn 5. Uranus 6. Neptune, which planet are you visiting: ");
         planetN = Integer.parseInt(scanIn.nextLine());
         Planets planet = Planets.getByNum(planetN);
+
         System.out.println("Your planet is: ");
         System.out.println(planet);
-
+        System.out.println("Your weight on " + planet + " is: ");
+        System.out.println(planet.surfaceWeight(weight));
 
 
 
