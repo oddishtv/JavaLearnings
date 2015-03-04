@@ -129,24 +129,10 @@ Input:
         private final int num;
         private final double grav;
 
-
-        Planets (int num, double grav){
+        private Planets (int num, double grav){
         this.num = num;
         this.grav = grav;
         }
-
-        Planets (){
-            this.num = 0;
-            this.grav = 0;
-        }
-
-
-        /*Planets (int num){
-            this.num = num;
-
-        }*/
-
-
 
         private int num() { return num; }
         private double grav() { return grav; }
@@ -154,7 +140,7 @@ Input:
         double surfaceWeight(double otherMass) {
         return otherMass * grav;}
 
-        Planets returnName (int num) {
+        public static Planets returnName (int num) {
             Planets pl = null;
             for (Planets p : Planets.values()) {
                 if (p.num() == num)
@@ -198,11 +184,14 @@ Input:
         System.out.println("1. Venus 2. Mars 3. Jupiter  4. Saturn 5. Uranus 6. Neptune, which planet are you visiting: ");
         planetN = Integer.parseInt(scanIn.nextLine());
         Planets planet = Planets.getByNum(planetN);
+        Planets planet1 = Planets.returnName(planetN);
 
         System.out.println("Your planet is: ");
         System.out.println(planet);
+        System.out.println(planet1);
         System.out.println("Your weight on " + planet + " is: ");
         System.out.println(planet.surfaceWeight(weight));
+
 
 
 
