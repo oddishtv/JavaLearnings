@@ -1,6 +1,8 @@
 package com.company;
 
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -164,6 +166,18 @@ Input:
         }
 
 
+        static Map<Integer, Planets> map = new HashMap();
+
+        static {
+            for (Planets p : Planets.values()) {
+                map.put(p.num, p);
+            }
+        }
+
+        public static Planets getByNum(int code) {
+            return map.get(code);
+        }
+
     }
 
 
@@ -183,8 +197,9 @@ Input:
         System.out.println("I have information for the following planets: ");
         System.out.println("1. Venus 2. Mars 3. Jupiter  4. Saturn 5. Uranus 6. Neptune, which planet are you visiting: ");
         planetN = Integer.parseInt(scanIn.nextLine());
-        Planets planet = new Planets();
-
+        Planets planet = Planets.getByNum(planetN);
+        System.out.println("Your planet is: ");
+        System.out.println(planet);
 
 
 
