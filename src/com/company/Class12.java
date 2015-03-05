@@ -145,7 +145,7 @@ Input:
             for (Planets p : Planets.values()) {
                 if (p.num() == num)
                     pl = p;
-            }
+                }
 
         return pl;
 
@@ -175,16 +175,25 @@ Input:
         String string1 = null;
         int weight = 0;
         int planetN = 0;
+        Planets planet = null;
+        Planets planet1 = null;
 
 
 
         System.out.println("Please enter your current earth weight: ");
         weight = Integer.parseInt(scanIn.nextLine());
+
+        boolean flag = false;
+        do {
+            if (flag == true)
+            {System.out.println("Please reenter correct number of planet: ");
+            }
+            flag = true;
         System.out.println("I have information for the following planets: ");
         System.out.println("1. Venus 2. Mars 3. Jupiter  4. Saturn 5. Uranus 6. Neptune, which planet are you visiting: ");
-        planetN = Integer.parseInt(scanIn.nextLine());
-        Planets planet = Planets.getByNum(planetN);
-        Planets planet1 = Planets.returnName(planetN);
+                planetN = Integer.parseInt(scanIn.nextLine());
+                planet = Planets.getByNum(planetN);
+        planet1 = Planets.returnName(planetN);} while (planet == null && planet1 == null);
 
         System.out.println("Your planet is: ");
         System.out.println(planet);
