@@ -61,6 +61,18 @@ public class Class18 {
         }
 
     }
+    public static boolean isInteger(String str)
+    {
+        try
+        {
+            int d = Integer.parseInt(str);
+        }
+        catch(NumberFormatException nfe)
+        {
+            return false;
+        }
+        return true;
+    }
 
 
     public static void run() {
@@ -69,9 +81,18 @@ public class Class18 {
     Year y;
         do {
             System.out.println("Please enter a year more then >=1582");
-           ytemp = Integer.parseInt(scanIn.nextLine());
+            String Stest = scanIn.nextLine();
+            boolean test = isInteger(Stest);
+
+            while (test == false){
+                System.out.println("Year can contain only numerics");
+                Stest = scanIn.nextLine();
+                test = isInteger(Stest);
+                }
+
+            ytemp = Integer.parseInt(Stest);
             y = new Year(ytemp);
-         } while (y.getYear() == 0);
+        } while (y.getYear() == 0);
 
         if (y.getLeap() == true){
             System.out.println("The year " +y.getYear()+ " is leap");
