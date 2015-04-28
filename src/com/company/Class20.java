@@ -66,14 +66,27 @@ public class Class20 {
 
 
     public static void run() {
-        boolean result;
-        Scanner scanIn = new Scanner(System.in);
-        System.out.println("Enter num1");
-        String num1 = scanIn.nextLine();
-        System.out.println("Enter num2");
-        String num2 = scanIn.nextLine();
-        result = Compare(num1,num2);
-        System.out.println("The Result is " + result);
+        double x = 5.4;
+        double y = 5.6;
+        String stringX = String.valueOf(x);
+        String stringY = String.valueOf(y);
+        stringX = stringX.substring(0,stringX.indexOf("."));
+        stringY = stringY.substring(0,stringY.indexOf("."));
+        /*int intX = (int)Math.round(x);
+        int intY = (int)Math.round(y);*/
+        //Scanner scanIn = new Scanner(System.in);
+        //System.out.println("Enter num");
+        //String num = scanIn.nextLine();
+        System.out.println("X = " + stringX);
+        System.out.println("Y = " + stringY);
+        int intX = Integer.parseInt(stringX);
+        int intY = Integer.parseInt(stringY);
+        intX = intX + 1;
+        intY = intY + 1;
+        stringX = Integer.toString(intX);
+        stringY = Integer.toString(intY);
+        System.out.println("X + 1 = " + stringX);
+        System.out.println("Y + 1 = " + stringY);
 
 
     }
