@@ -8,6 +8,8 @@ import java.util.Scanner;
 public class Class1 {
     public static void run()
     {
+
+        int start  = 34, end = 99;
         Scanner scanIn = new Scanner(System.in);
         System.out.println("Hello. What is your name?");
         String name = scanIn.nextLine();
